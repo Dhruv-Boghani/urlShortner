@@ -5,7 +5,7 @@ const shortId = require('short-id');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 
-const secret = 'Dhruv@123$';
+const secret = process.env.SECRET_KEY;
 
 const routers = express.Router();
 // routers.use(bodyParser.json());
