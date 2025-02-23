@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new url seved in data base</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .btn {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>new url seved in data base</h1>
+    <h2>your url is <%= data.oURL %></h2>
+    <h2>your short id is <%= data.sURL %></h2>
+    <h2>your short url is <a href="localhost:8000/<%= data.sURL %>">localhost:8000/<%= data.sURL %></a></h2>
+    <a href="/" class="btn">home</a>
+</body>
+</html>
