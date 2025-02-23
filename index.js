@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 const Router = require('./router.js');
 const cookieParser = require('cookie-parser');
 require('dotenv').config();
+const path = require("path");
+
 
 
 const cors = require('cors');
@@ -28,7 +30,11 @@ mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log('Connected to MongoDB'))
     .catch(err => console.log('Could not connect to MongoDB', err))
 
-app.set('view engine', 'ejs');
+
+
+app.set("views", path.join(__dirname, "views"));  // ✅ Ensures correct path
+app.set("view engine", "ejs");
+
 
 app.use(cookieParser());
 app.use(express.json());
