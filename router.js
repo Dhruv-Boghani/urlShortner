@@ -92,6 +92,7 @@ routers.get('/', async (req, res) => {
         return res.redirect('/login');
     }
     else {
+        //temporary code to check if the token is valid and the user is logged in
         const token = cookies.token;
         const decoded = jwt.verify(token, secret);
         const user = await UserModel.findOne({ _id: decoded.userId });
