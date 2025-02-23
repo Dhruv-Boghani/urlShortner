@@ -12,8 +12,9 @@ const corsConfig = {
     method: ["GET", "POST", "PUT", "DELETE"],
   }
   
-  app.use(cors(corsConfig));
-  app.options("", cors(corsConfig));
+  app.use(cors());
+//   app.use(cors(corsConfig));
+//   app.options("", cors(corsConfig));
   
 
 const PORT = process.env.PORT || 8000;
