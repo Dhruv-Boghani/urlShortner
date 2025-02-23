@@ -12,10 +12,16 @@ const corsConfig = {
     method: ["GET", "POST", "PUT", "DELETE"],
   }
 
-  
+
 
 const PORT = process.env.PORT || 8000;
 const app = express();
+
+
+app.use(cors(corsConfig));
+app.options("", cors(corsConfig));
+
+
 
 mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log('Connected to MongoDB'))
