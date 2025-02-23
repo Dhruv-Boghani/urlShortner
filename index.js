@@ -11,15 +11,15 @@ const corsConfig = {
     Credential: true,
     method: ["GET", "POST", "PUT", "DELETE"],
   }
-
-
+  
+  app.use(cors(corsConfig));
+  app.options("", cors(corsConfig));
+  
 
 const PORT = process.env.PORT || 8000;
 const app = express();
 
 
-app.use(cors(corsConfig));
-app.options("", cors(corsConfig));
 
 
 
