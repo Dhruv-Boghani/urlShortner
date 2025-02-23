@@ -13,14 +13,14 @@ const corsConfig = {
     allowedHeaders: ["Content-Type", "Authorization"]
 }
   
-app.options("", cors(corsConfig));
-app.use(cors(corsConfig));
-  
+
 
 const PORT = process.env.PORT || 8000;
 const app = express();
 
 
+app.options("", cors(corsConfig));
+app.use(cors(corsConfig));
 
 
 
