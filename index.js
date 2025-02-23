@@ -9,7 +9,8 @@ const cors = require('cors');
 const corsConfig = {
     origin: "*",
     Credential: true,
-    method: ["GET", "POST", "PUT", "DELETE"]
+    method: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"]
 }
   
 app.options("", cors(corsConfig));
