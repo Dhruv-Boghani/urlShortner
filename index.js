@@ -13,7 +13,7 @@ const corsConfig = {
   }
   
   app.use(cors(corsConfig));
-  app.options("", cors(corsConfig));
+//   app.options("", cors(corsConfig));
   
 
 const PORT = process.env.PORT || 8000;
