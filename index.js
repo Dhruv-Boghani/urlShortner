@@ -30,7 +30,7 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/', require('./router'))
+app.use('/', require('./router.js'));
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)
