@@ -16,7 +16,7 @@ const corsConfig = {
 const PORT = process.env.PORT || 8000;
 const app = express();
 
-app.options("", cors(corsConfig));
+app.options("*", cors(corsConfig));
 app.use(cors(corsConfig));
 
 mongoose.connect(process.env.MONGO_URI || "mongodb+srv://dhruvboghani624:jQquPiMPGniQrb6T@kanishkastock.okpwf.mongodb.net/urlShortner?retryWrites=true&w=majority")
