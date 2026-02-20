@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-// const Router = require('./router.js');
+const Router = require('./router.js');
 const cookieParser = require('cookie-parser');
 require('dotenv').config();
 const path = require("path");
@@ -46,4 +46,3 @@ app.use('/', Router)
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)
 })
-
