@@ -1,0 +1,16 @@
+**explain.txt**
+
+The project is a Node.js-based URL shortening service using Express.js framework. Key dependencies include Express, Mongoose for MongoDB interaction, EJS for templating, JWT for authentication, and CORS/cookie-parser for middleware support.
+
+Entry point command: `npm start` or `node index.js`.
+
+Environment requirements: MongoDB URI (`MONGO_URI`) and JWT secret key (`SECRET_KEY`) must be configured via `.env` file.
+
+Hardcoded elements:
+- Default MongoDB connection string: `mongodb+srv://dhruvboghani624:jQquPiMPGniQrb6T@kanishkastock.okpwf.mongodb.net/urlShortner`
+- Default port: `8000`
+- CORS configuration allows all origins and methods
+- API routes: `/`, `/login`, `/sign-up`, `/logout`
+- View templates: `login.ejs`, `home.ejs`, `newURL.ejs`
+
+These hardcoded values should be externalized for production deployment.
