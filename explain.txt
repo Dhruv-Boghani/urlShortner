@@ -1,0 +1,36 @@
+**explain.txt**
+
+The project is primarily developed using JavaScript with the Express framework for building the server-side application. It utilizes Mongoose as an ODM (Object Data Modeling) library to interact with a MongoDB database.
+
+Key dependencies include:
+- `express`: Web framework for Node.js.
+- `mongoose`: ODM for MongoDB.
+- `cors`: Middleware to enable CORS.
+- `dotenv`: Module to load environment variables from a `.env` file.
+- `ejs`: Template engine for rendering HTML.
+- `jsonwebtoken`: Library for handling JWT (JSON Web Tokens).
+- `cookie-parser`: Middleware to parse cookies.
+- `short-id`: Library to generate short unique IDs.
+
+The estimated entry point command to start the application is `npm run dev` for development or `npm start` for production.
+
+Specific environment requirements:
+- A `.env` file must be present with the following variables:
+  - `PORT`: Default value is 8000.
+  - `MONGO_URI`: MongoDB connection string.
+  - `SECRET_KEY`: Secret key for JWT signing.
+
+Critical extracted information:
+- **Hardcoded Testing Credentials**: None found.
+- **Default Environment Variables**:
+  - `PORT`: 8000
+  - `MONGO_URI`: `mongodb+srv://dhruvboghani624:jQquPiMPGniQrb6T@kanishkastock.okpwf.mongodb.net/urlShortner?retryWrites=true&w=majority`
+- **API Routes**:
+  - `POST /`: Create a new URL shortener entry.
+  - `POST /login`: User login.
+  - `POST /sign-up`: User registration.
+  - `GET /`: Home page displaying user's URL entries.
+  - `GET /logout`: Logout user.
+  - `GET /login`: Login page.
+
+The project is configured to deploy on Vercel with the `vercel.json` file specifying the build and route configurations.
