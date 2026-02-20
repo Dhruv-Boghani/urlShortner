@@ -8,7 +8,7 @@ const path = require("path");
 const cors = require('cors');
 const corsConfig = {
     origin: "*",
-    credentials: true, // <--- Added semicolon
+    credentials: true,
     method: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"]
 }
@@ -16,7 +16,7 @@ const corsConfig = {
 const PORT = process.env.PORT || 8000;
 const app = express();
 
-app.options("", cors(corsConfig));
+app.options("*", cors(corsConfig));
 app.use(cors(corsConfig));
 
 mongoose.connect(process.env.MONGO_URI || "mongodb+srv://dhruvboghani624:jQquPiMPGniQrb6T@kanishkastock.okpwf.mongodb.net/urlShortner?retryWrites=true&w=majority")
@@ -30,7 +30,7 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/', require('./router')) // <--- Fixed the Router import
+app.use('/', require('./router'))
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)
