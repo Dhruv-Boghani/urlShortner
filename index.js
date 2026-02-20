@@ -26,23 +26,25 @@ app.use(cors(corsConfig));
 
 
 
-await mongoose.connect(process.env.MONGO_URI || "mongodb+srv://dhruvboghani624:jQquPiMPGniQrb6T@kanishkastock.okpwf.mongodb.net/urlShortner?retryWrites=true&w=majority")
-    .then(() => console.log('Connected to MongoDB'))
-    .catch(err => console.log('Could not connect to MongoDB', err))
+async function startServer() {
+    await mongoose.connect(process.env.MONGO_URI || "mongodb+srv://dhruvboghani624:jQquPiMPGniQrb6T@kanishkastock.okpwf.mongodb.net/urlShortner?retryWrites=true&w=majority")
+        .then(() => console.log('Connected to MongoDB'))
+        .catch(err => console.log('Could not connect to MongoDB', err))
+    
+    app.set("views", path.join(__dirname, "views"));
+    app.set("view engine", "ejs");
+    
+    
+    app.use(cookieParser());
+    app.use(express.json());
+    app.use(express.urlencoded({ extended: true }));
+    
+    app.use('/', Router)
+    
+    
+    app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT}`)
+    })
+}
 
-
-
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "ejs");
-
-
-app.use(cookieParser());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-app.use('/', Router)
-
-
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`)
-})
+startServer();
