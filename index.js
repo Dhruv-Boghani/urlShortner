@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const router = require('./router'); // Fixed missing file path
+const router = require('./router'); 
 const cookieParser = require('cookie-parser');
 require('dotenv').config();
 const path = require("path");
@@ -9,7 +9,7 @@ const cors = require('cors');
 const corsConfig = {
     origin: "*",
     credentials: true,
-    method: ["GET", "POST", "PUT", "DELETE"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"]
 }
 
@@ -30,7 +30,7 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/', router); // Fixed missing file path
+app.use('/', router); 
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)
