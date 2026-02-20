@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const Router = require('./router'); // Removed .js extension
+const Router = require('./router.js'); // Added .js extension
 const cookieParser = require('cookie-parser');
 require('dotenv').config();
 const path = require("path");
